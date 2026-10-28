@@ -8,3 +8,7 @@
 /stock-market-analysis/reports/
 /stock-market-analysis/20??-??-??/
 /stock-market-analysis/migration/original/
+
+# Private automation history and machine-specific scheduler state
+/automations/**/memory.md
+/automations/.run-jitter-salt

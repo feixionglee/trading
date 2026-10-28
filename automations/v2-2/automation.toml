@@ -1,0 +1,14 @@
+version = 1
+id = "v2-2"
+kind = "cron"
+name = "美股收盘前市场分析 v3（UTC 可靠版）"
+prompt = "用中文执行一次美股收盘前市场与 Robinhood 账户分析。此任务按 UTC 19:00 触发，对应美股夏令时 15:00 ET，常规收盘前一小时。不要下单、撤单或修改 watchlist。\n\n必须先做可见落盘：\n1. 用 America/New_York 确定美东交易日 YYYY-MM-DD。\n2. 立刻创建 /Users/feixiongli/Documents/Codex/stock-market-analysis/YYYY-MM-DD/ 并写入 /Users/feixiongli/Documents/Codex/stock-market-analysis/YYYY-MM-DD/market-before-close.md。\n3. 文件开头先写：任务已启动、当前美东时间、目标路径。即使后续数据失败，也必须保留这个文件并追加失败原因。\n4. 尝试向线程 019f03a9-83b1-7f83-ba2c-1319007d7a68 发送启动消息和最终报告；如果线程工具不可用，不要中断，文件结果优先。\n\n分析规则：\n1. 如果今天不是美股交易日、或市场因假日/特殊原因关闭，只写简短说明并结束。\n2. 若是交易日，读取 Robinhood 主账户末四位 3187：portfolio、股票持仓、非零期权、现金/购买力、保证金风险、watchlists 和可得报价。\n3. 新闻扫描最多 10 条关键新闻、最多 20 个 ticker。优先持仓和期权 underlying，其次 watchlist 和当日热点。\n4. 关注 SPY/QQQ/IWM/SMH/SOXX/TLT/UUP/USO/URA/GLD，AI 半导体、memory/storage、data center power、电网、核能/uranium、能源、space/defense、利率/美元/美债、财报和政策事件。\n5. 工具、新闻、网页、Gmail、Robinhood 任一失败时，写清限制并继续，不要等待或重试超过一次。\n\n报告结构：标题；交易日状态与数据时间；尾盘市场氛围与主线；关键新闻与可能遗漏；账户概览；股票持仓；非零期权；自选股与热点；尾盘与隔夜操作建议清单；需要用户确认后才可执行的交易；最后写明报告绝对路径。"
+status = "ACTIVE"
+rrule = "DTSTART:20260714T190000Z\nRRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR;BYHOUR=19;BYMINUTE=0;BYSECOND=0"
+model = "gpt-5.6-terra"
+reasoning_effort = "medium"
+execution_environment = "local"
+target = { type = "project", project_id = "ee7f3743-e456-48be-8db4-dd9f5462e5b6" }
+cwds = ["/Users/feixiongli/Documents/Codex/stock-market-analysis"]
+created_at = 1783614632839
+updated_at = 1791321723735
