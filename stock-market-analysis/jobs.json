@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "status": "prepared_not_registered",
+  "description": "任务交接清单，不是可直接导入的调度器配置。",
+  "jobs": [
+    {
+      "name": "preopen",
+      "prompt_file": "stock-market-analysis/prompts/preopen.md",
+      "working_directory": "/workspace/trading",
+      "output_directory": "/workspace/stock-market-analysis",
+      "original_utc_rrule": "DTSTART:20260714T123000Z\nRRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR;BYHOUR=12;BYMINUTE=30;BYSECOND=0",
+      "market_time_recommendation": {
+        "timezone": "America/New_York",
+        "weekdays": [
+          "MO",
+          "TU",
+          "WE",
+          "TH",
+          "FR"
+        ],
+        "time": "08:30"
+      },
+      "registered": false
+    },
+    {
+      "name": "before-close",
+      "prompt_file": "stock-market-analysis/prompts/before-close.md",
+      "working_directory": "/workspace/trading",
+      "output_directory": "/workspace/stock-market-analysis",
+      "original_utc_rrule": "DTSTART:20260714T190000Z\nRRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR;BYHOUR=19;BYMINUTE=0;BYSECOND=0",
+      "market_time_recommendation": {
+        "timezone": "America/New_York",
+        "weekdays": [
+          "MO",
+          "TU",
+          "WE",
+          "TH",
+          "FR"
+        ],
+        "time": "15:00"
+      },
+      "registered": false
+    }
+  ]
+}

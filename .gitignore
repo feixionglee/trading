@@ -1,0 +1,10 @@
+# Local credentials and generated reports
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.DS_Store
+/stock-market-analysis/reports/
+/stock-market-analysis/20??-??-??/
+/stock-market-analysis/migration/original/
