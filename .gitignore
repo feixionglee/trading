@@ -10,5 +10,5 @@
 /stock-market-analysis/migration/original/
 
 # Private automation history and machine-specific scheduler state
-/automations/**/memory.md
-/automations/.run-jitter-salt
+/.codex/automations/**/memory.md
+/.codex/automations/.run-jitter-salt

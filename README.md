@@ -9,4 +9,4 @@
 
 历史报告、账户数据和原始任务记忆位于仓库外的 `/workspace/stock-market-analysis`。不要将其提交到 GitHub。
 
-- [本地定时任务配置快照与迁移说明](automations/README.md)
+- [本地定时任务配置快照与迁移说明](.codex/automations/README.md)
